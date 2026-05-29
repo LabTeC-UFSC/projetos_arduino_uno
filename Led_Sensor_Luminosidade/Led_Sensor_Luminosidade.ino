@@ -8,7 +8,7 @@
 // Essa é a variável mais importante do código! 
 // Ela define a "linha de corte" entre o claro e o escuro.
 // Você precisará ajustar esse número baseando-se no Monitor Serial.
-int limiteLuz = 5; 
+int limiteLuz = 300; 
 
 void setup() {
   pinMode(PINO_LED, OUTPUT);

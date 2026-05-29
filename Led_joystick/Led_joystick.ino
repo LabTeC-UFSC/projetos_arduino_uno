@@ -19,22 +19,20 @@ void setup() {
 }
 
 void loop() {
-  analogWrite(LED_VERMELHO, analogRead(VRx));
-  analogWrite(LED_VERDE, analogRead(VRy));
+  analogWrite(LED_VERMELHO, map(analogRead(VRx), 0, 1023, 0, 255));
+  analogWrite(LED_VERDE,    map(analogRead(VRy), 0, 1023, 0, 255));
   
   bool estadoBotao = digitalRead(SW);
   
   // Verifica se o botão foi pressionado (foi de HIGH para LOW)
-  if(estadoBotao != ultimoEstadoBotao){
-    estadoAzul = !estadoAzul;
-    delay(50); // "congela" o processador por 50ms 
+  if (estadoBotao == LOW && ultimoEstadoBotao == HIGH) {
+  estadoAzul = !estadoAzul;
   }
+  ultimoEstadoBotao = estadoBotao;
 
-  if(estadoAzul){
-    digitalWrite(LED_AZUL, HIGH);
-  }
-  else{
-    digitalWrite(LED_AZUL, LOW);
-  }
+
+  digitalWrite(LED_AZUL, estadoAzul);
+
+  delay(10);
 
 }

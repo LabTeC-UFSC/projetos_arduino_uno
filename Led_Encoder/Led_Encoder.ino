@@ -1,6 +1,5 @@
 // =====================================================================
 // PROJETO: SELETOR DE CORES DIGITAL
-// Leia os comentários! Eles explicam como a mágica acontece.
 // =====================================================================
 
 // 1. Dando nomes aos pinos do Arduino para facilitar a leitura
@@ -8,16 +7,6 @@
 #define LED_VERDE       10 
 #define LED_AZUL        9 
 #define BOTAO_SW        7  // Pino onde ligamos o clique do botão
-
-/* =====================================================================
-   O QUE É O PINO CLK (ROTAÇÃO)?
-   Dentro do botão giratório existe um disco cheio de "dentes" de metal.
-   Enquanto você gira, o pino CLK fica raspando nesses dentes:
-   - Se ele parar encostado num dente: Ele envia energia (1 / LIGADO).
-   - Se ele parar no buraco vazio: Ele corta a energia (0 / DESLIGADO).
-   
-   Girar esse botão é como acender e apagar um interruptor bem rápido!
-   ===================================================================== */
 #define ROTACAO         6  // Ligue o pino CLK do Encoder aqui
 
 
